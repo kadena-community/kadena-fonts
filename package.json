@@ -1,0 +1,53 @@
+{
+  "name": "@kadena/fonts",
+  "version": "0.0.1",
+  "description": "Package to serve fonts to applications",
+  "main": "lib/index.min.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx prettier --write ./src && npx eslint --fix && tslint -p tsconfig.json",
+    "build": "rm -rf lib && tsc && npm run lint && rollup -c",
+    "prepackpackage": "npm run build && rm -rf ./*.tgz",
+    "packpackage": "cd lib && yarn pack"
+  },
+  "devDependencies": {
+    "@types/lodash.kebabcase": "^4.1.7",
+    "esbuild": "^0.14.38",
+    "eslint": "^8.41.0",
+    "prettier": "^2.8.8",
+    "rollup": "^2.71.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dts": "^4.2.1",
+    "rollup-plugin-esbuild": "^4.9.1",
+    "rollup-plugin-uglify": "^5.0.2",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "lodash.kebabcase": "^4.1.1"
+  },
+  "files": [
+    "lib/fonts/**/*.ttf",
+    "lib/fonts/**/*.otf",
+    "lib/fonts/**/*.woff",
+    "lib/fonts/**/*.woff2",
+    "lib/fonts/**/*.d.ts",
+    "lib/types",
+    "lib/index.min.js",
+    "lib/index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadena-community/kadena-fonts.git"
+  },
+  "keywords": [],
+  "author": "Kadena LLC <@kadena_io>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/kadena-community/kadena-fonts/issues"
+  },
+  "homepage": "https://github.com/kadena-community/kadena-fonts#readme",
+  "type": "module"
+}
